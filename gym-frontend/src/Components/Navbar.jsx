@@ -32,10 +32,10 @@ export const Navbar = () => {
             </ul>
 
             <div className="flex space-x-4">
-            <button className="bg-transparent border border-white px-4 py-2 rounded-xl text-[18px] font-semibold font-poppins leading-[40px] opacity-100 hover:bg-white hover:text-black duration-300">
+            <button className="bg-transparent border border-white px-4 py-1 rounded-xl text-[18px] font-semibold font-poppins leading-[40px] opacity-100 hover:bg-white hover:text-black duration-300">
             S'inscrire
             </button>
-            <button className="bg-[#097FD9] text-white px-4 py-2 rounded-xl hover:bg-transparent text-[18px] font-semibold font-poppins leading-[40px] opacity-100 hover:text-white  duration-300">
+            <button className="bg-[#097FD9] text-white px-4 py-1 rounded-xl hover:bg-transparent text-[18px] font-semibold font-poppins leading-[40px] opacity-100 hover:text-white  duration-300">
             Se connecter
             </button>
         </div>
