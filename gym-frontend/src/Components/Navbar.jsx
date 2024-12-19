@@ -18,7 +18,7 @@ export const Navbar = () => {
   ]
 
   return (
-    <div className='flex justify-between items-center px-24 text-white h-[94px] w-full bg-[#090707] font-signature'>
+    <div className='flex justify-between items-center px-24   text-white h-[94px] w-full bg-[#090707] font-signature'>
         <div className='text-2xl '>
             YOUNESS
         </div>
