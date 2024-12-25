@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
 import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
@@ -35,6 +35,17 @@ export const Program = () => {
             isActive: false,
         },
       ];
+
+        const containerRef = useRef(null);
+      
+        const handleScrollLeft = () => {
+          containerRef.current.scrollBy({ left: -350, behavior: "smooth" });
+        };
+      
+        const handleScrollRight = () => {
+          containerRef.current.scrollBy({ left: 350, behavior: "smooth" });
+        };
+      
   return (
     <div className='relative text-white bg-[#090707] w-full h-auto text-left   py-24 md:flex-row'>
         <div className='flex justify-between px-24'>
@@ -44,18 +55,22 @@ export const Program = () => {
             </div>
 
             <div className="flex justify between  text-white  cursor-pointer ">
-                <ArrowCircleLeftRoundedIcon style={{ fontSize: '68px'}} className='hover:scale-150 duration-500'/>
-            
-                <ArrowCircleRightRoundedIcon color='primary' className='hover:scale-150 duration-500'  style={{ fontSize: '68px' }}/>
+              <div onClick={handleScrollLeft}>
+                <ArrowCircleLeftRoundedIcon style={{ fontSize: '68px'}} className='hover:scale-105 duration-300' />
+              </div>
+              <div onClick={handleScrollRight}>
 
+                <ArrowCircleRightRoundedIcon color='primary' className='hover:scale-105 duration-300'  style={{ fontSize: '68px' }}/>
+              </div>
             </div>
         </div>
-        <div className='  '>
-            <div className='grid  overflow-x-auto gap-8 justify-center md:gap-[344px] px-14 py-10   md:grid-cols-5 sm:grid-cols-1'>
+
+        <div className='max-w-screen-xl'>
+            <div ref={containerRef} className='flex gap-[26px]  mb-[104px]  mt-[93px] overflow-x-hidden overflow-y-hidden'>
                 {programs.map((program, index) => (
                 <div
                 key={index}
-                className='flex-shrink-0 w-[320px] h-[240px]  items-center py-10 px-6 rounded-xl bg-[#0D0D0D] hover:bg-[#097FD9] scale-105 duration-300' 
+                className='flex-shrink-0 w-[320px] h-[240px]  items-center py-10 px-6  rounded-xl bg-[#0D0D0D] hover:bg-[#097FD9] scale-105 duration-300' 
               
                 >
                 <div className="text-4xl mb-4">{program.icon}</div>
